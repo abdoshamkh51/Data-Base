@@ -1,0 +1,38 @@
+-- Q1: Replace letter 'a' with '@'
+SELECT REPLACE('database', 'a', '@') AS RESULT
+FROM DUAL;
+
+-- Q2: Replace full word
+SELECT REPLACE(
+    'This is an old book',
+    'old',
+    'new'
+) AS RESULT
+FROM DUAL;
+
+-- Q3: Create PRODUCT table
+CREATE TABLE PRODUCT (
+    PRODUCT_NAME VARCHAR2(100)
+);
+
+-- Insert sample products
+INSERT INTO PRODUCT (PRODUCT_NAME) VALUES ('Laptop');
+INSERT INTO PRODUCT (PRODUCT_NAME) VALUES ('Mouse');
+INSERT INTO PRODUCT (PRODUCT_NAME) VALUES ('Keyboard');
+
+COMMIT;
+
+-- Check products
+SELECT * FROM PRODUCT;
+
+-- Q4: LPAD
+SELECT
+    PRODUCT_NAME,
+    LPAD(PRODUCT_NAME, 15, '*') AS FORMATTED_NAME
+FROM PRODUCT;
+
+-- Q5: RPAD
+SELECT
+    PRODUCT_NAME,
+    RPAD(PRODUCT_NAME, 15, '#') AS FORMATTED_NAME
+FROM PRODUCT;
